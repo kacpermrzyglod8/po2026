@@ -34,5 +34,6 @@ public class lotto3 {
         System.out.println("Wylosowana lista: " + lista);
         System.out.println("Liczba losowań: " + losowania);
         System.out.println("Czas dzziałania: " + runtime + " ms");
+        System.out.println("Czas dzialania/liczba losowań: " +  (double)runtime / losowania + "ms");
     }
 }
