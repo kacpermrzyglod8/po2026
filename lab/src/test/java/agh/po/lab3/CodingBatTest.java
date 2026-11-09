@@ -1,6 +1,8 @@
 package agh.po.lab3;
 
 import static org.junit.Assert.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CodingBatTest {
     CodingBat codingBat = new CodingBat();
@@ -54,4 +56,38 @@ public class CodingBatTest {
         assertEquals("Hello xyz!!", codingBat.helloName("xyz!"));
         assertEquals("Hello Hello!", codingBat.helloName("Hello"));
     }
+    //TESTY zadana kolejne zajęcia
+//TESTY zadana kolejne zajęcia
+    @org.junit.Test
+    public void mapAB4Test() {
+        assertEquals(Map.of("a", "aaa", "b", "bb", "c", "aaa"),
+                codingBat.mapAB4(new HashMap<>(Map.of("a", "aaa", "b", "bb", "c", "cake"))));
+        assertEquals(Map.of("a", "aa", "b", "bbb", "c", "bbb"),
+                codingBat.mapAB4(new HashMap<>(Map.of("a", "aa", "b", "bbb", "c", "cake"))));
+        assertEquals(Map.of("a", "aa", "b", "bbb", "c", "bbb"),
+                codingBat.mapAB4(new HashMap<>(Map.of("a", "aa", "b", "bbb"))));
+        assertEquals(Map.of("a", "aaa"),
+                codingBat.mapAB4(new HashMap<>(Map.of("a", "aaa"))));
+        assertEquals(Map.of("b", "bbb"),
+                codingBat.mapAB4(new HashMap<>(Map.of("b", "bbb"))));
+    }
+    @org.junit.Test
+    public void pairsTest() {
+        assertEquals(Map.of("b", "g", "c", "e"),
+                codingBat.pairs(new String[]{"code", "bug"}));
+        assertEquals(Map.of("m", "n"),
+                codingBat.pairs(new String[]{"man", "moon", "main"}));
+        assertEquals(Map.of("g", "d", "m", "n", "n", "t"),
+                codingBat.pairs(new String[]{"man", "moon", "good", "night"}));
+        assertEquals(Map.of(),
+                codingBat.pairs(new String[]{}));
+        assertEquals(Map.of("a", "a", "b", "b"),
+                codingBat.pairs(new String[]{"a", "b"}));
+        assertEquals(Map.of("a", "d", "c", "s"),
+                codingBat.pairs(new String[]{"are", "codes", "and", "cods"}));
+        assertEquals(Map.of("a", "e", "b", "a", "c", "e", "t", "a"),
+                codingBat.pairs(new String[]{"apple", "banana", "tea", "coffee"}));
+    }
+
+
 }

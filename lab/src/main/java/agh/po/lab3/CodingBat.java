@@ -1,4 +1,6 @@
 package agh.po.lab3;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CodingBat {
     public boolean array123(int[] nums) {
@@ -35,6 +37,34 @@ public class CodingBat {
         return "Hello " + name + "!";
     }
 
+    //zadania lab następny
+    public Map<String, String> mapAB4(Map<String, String> map) {
+        if (map.containsKey("a") && map.containsKey("b")) { // sprawdzaenie czy są takie klucze( w niektórych testach nie ma)
+            int x = map.get("a").length();
+            int y = map.get("b").length();
+
+            if (x > y) {
+                map.put("c", map.get("a"));
+            } else if (y > x) {
+                map.put("c", map.get("b"));
+            } else {
+                map.put("a", "");
+                map.put("b", "");
+            }
+        }
+        return map;
+    }
+    public Map<String, String> pairs(String[] strings) {
+        Map<String, String> map = new HashMap<String, String>();
+
+        for (String s : strings) {
+            String pierwszy = s.substring(0, 1);
+            String ostatni = s.substring(s.length() - 1, s.length());
+            map.put(pierwszy, ostatni);
+        }
+
+        return map;
+    }
 
     public static void main(String[] args) {
         CodingBat codingBat = new CodingBat();
