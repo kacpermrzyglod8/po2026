@@ -6,11 +6,13 @@ import agh.po.animals.Snake;
 
 public class Zoo {
     Animal[] animals = new Animal[100];
-    public int rand(){
-        int rand = (int)(Math.random() * 3) + 1;
-        return rand;
+
+    public int rand() {
+        int wynik = (int) (Math.random() * 3) + 1;
+        return wynik;
     }
-    public void fill(){
+
+    public void fillAnimals() {
         for (int i = 0; i < animals.length; i++) {
             int los = rand();
 
@@ -23,11 +25,34 @@ public class Zoo {
             }
         }
     }
-    public int sumLegs(){
+
+    public int sumLegs() {
         int suma = 0;
-        for(int i = 0; i < animals.length; i++){
+        for (int i = 0; i < animals.length; i++) {
             suma += animals[i].getLegs();
         }
         return suma;
+    }
+
+    public void printDescriptions() {
+        for (int i = 0; i < animals.length; i++) {
+            int legs = animals[i].getLegs();
+            String opis = animals[i].getDescription();
+            System.out.println(opis);
+        }
+    }
+
+    public void makeSounds() {
+        for (int i = 0; i < animals.length; i++) {
+            animals[i].makeSound();
+        }
+    }
+
+    public static void main(String[] args) {
+        Zoo zoo = new Zoo();
+        zoo.fillAnimals();
+        zoo.printDescriptions();
+        zoo.makeSounds();
+        System.out.println("Suma nóg: " + zoo.sumLegs());
     }
 }

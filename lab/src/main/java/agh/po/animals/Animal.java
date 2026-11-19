@@ -8,6 +8,7 @@ public abstract class Animal {
         this.legs = y;
     }
     public abstract String getDescription();
+    public abstract void makeSound();
     public int getLegs(){
      return legs;
     }

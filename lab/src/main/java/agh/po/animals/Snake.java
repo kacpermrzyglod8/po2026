@@ -8,4 +8,8 @@ public class Snake extends Animal {
     public String getDescription(){
         return name + " " + legs;
     }
+    @Override
+    public void makeSound(){
+        System.out.println("ssss");
+    }
 }
